@@ -1,0 +1,7 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "https://housewisestorage.blob.core.windows.net/;FileEndpoint=https://housewisestorage.file.core.windows.net/;QueueEndpoint=https://housewisestorage.queue.core.windows.net/;TableEndpoint=https://housewisestorage.table.core.windows.net/",
+    "FUNCTIONS_WORKER_RUNTIME": "python"
+  }
+}

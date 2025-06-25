@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "COSMOS_URI": "https://your-cosmos-uri",
+    "COSMOS_KEY": "your-key",
+    "COSMOS_DB": "chores-db",
+    "COSMOS_CONTAINER": "chores"
+  }
+}
