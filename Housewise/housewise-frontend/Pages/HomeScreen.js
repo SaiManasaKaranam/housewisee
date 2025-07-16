@@ -1,9 +1,38 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { View, Text, FlatList, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React, { useEffect } from "react";
+
+const API_BASE_URL = "http://localhost:7071/api";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+
+  const fetchChores = async () => {
+    console.log("📡 Fetching chores...");
+    try {
+      const response = await fetch(
+        "http://localhost:7071/api/chores/list?groupId=testgroup"
+      );
+
+      const text = await response.text(); // <-- Parse raw text first for debugging
+      console.log("📥 Raw text response:", text);
+
+      const data = JSON.parse(text); // <-- Now safely parse it
+      console.log("✅ Parsed JSON chores:", data);
+
+      // You can now use `data` to update state
+      // setChores(data);
+    } catch (error) {
+      console.error("❌ Error fetching chores:", error);
+      Alert.alert("Fetch Error", error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchChores();
+  }, []);
+
   const mockGroups = [
     {
       id: "1",
