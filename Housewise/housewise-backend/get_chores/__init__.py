@@ -8,6 +8,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if not group_id:
         return func.HttpResponse("Missing groupId", status_code=400)
+
     
     # 🔧 Return mocked response for now
     mock_chores = [
@@ -41,3 +42,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # except Exception as e:
     #     return func.HttpResponse(f"Error: {str(e)}", status_code=500)
+
